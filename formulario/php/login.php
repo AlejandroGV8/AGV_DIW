@@ -10,6 +10,7 @@ if (!$conn) {
 $contrasñaHash;
 $correo = $_POST['correo'];
 $contraseña = $_POST['password'];
+$usuarioAdministrador = "admin";
 //Consulta para buscar el correo
 $sql = "SELECT * FROM usuarios WHERE Usuario_email = '" . $correo . "'";
 
@@ -31,9 +32,16 @@ if($result->num_rows > 0) {
      if($resultPsw->num_rows > 0){
         $fila = mysqli_fetch_assoc($resultPsw);
         $clave = $fila['Usuario_clave'];
+        $perfilUsuario = $fila['Usuario_perfil'];
         if(password_verify($contraseña, $clave)){
+            if($usuarioAdministrador == $perfilUsuario){
+                $_SESSION['correo_usuario'] = $correo;
+                header('Location:paginaAdmin.php'); 
+            } else {
             $_SESSION['correo_usuario'] = $correo;
             header('Location:logeo.php');
+            }
+            
 
         } else {
             echo "La contraseña o usuario no coincide";
@@ -48,4 +56,3 @@ if($result->num_rows > 0) {
 $result->close();
 
 mysqli_close($conn);
-?>

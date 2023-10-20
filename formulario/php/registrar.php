@@ -41,13 +41,14 @@ if (isset($_POST['usuario'], $_POST['correo'], $_POST['password'])) {
         $mensaje = "El correo ya está en uso.";
     } else {
         $contraseñaHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $stmt = $conexion->prepare("INSERT INTO usuarios (Usuario_nombre, Usuario_email, Usuario_clave) VALUES (?, ?, ?)");
+        $usuarioNormal = "usuario";
+        $stmt = $conexion->prepare("INSERT INTO usuarios (Usuario_nombre, Usuario_email, Usuario_clave,Usuario_perfil) VALUES (?, ?, ?, ?)");
         
         if (!$stmt) {
             die("Error en preparación: " . $conexion->error);
         }
         
-        $stmt->bind_param("sss", $_POST['usuario'], $_POST['correo'], $contraseñaHash);
+        $stmt->bind_param("ssss", $_POST['usuario'], $_POST['correo'], $contraseñaHash, $usuarioNormal);
 
         if ($stmt->execute()) {
             $mensaje = "El cliente fue dado de alta.";
@@ -73,5 +74,3 @@ if ($redirigir) {
         }, 3000);  // Redirige después de 3000 ms (3 segundos).
     </script>";
 }
-
-?>

@@ -56,20 +56,7 @@ $conn->close();
     <div class="editar-perfil-formulario">
         <h2>Editar perfil</h2>
         <form method="post" action="./actualizar.php" enctype="multipart/form-data">
-
-            <?php
-            if (isset($fila['Usuario_fotografia']) && !empty($fila['Usuario_fotografia']) && file_exists($fila['Usuario_fotografia'])) {
-                echo '<img src="' . $fila['Usuario_fotografia'] . '" alt="Foto de perfil" width="50">';
-            }
-            ?>
             
-            <div class="image-upload">
-                <label for="profile_image">
-                    <i class="fas fa-user-circle fa-3x"></i>
-                </label>
-                <input type="file" id="profile_image" name="profile_image">
-            </div>
-
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>">
 

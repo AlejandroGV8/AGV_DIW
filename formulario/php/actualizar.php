@@ -24,7 +24,7 @@ $domicilio = $_POST['domicilio'];
 $poblacion = $_POST['poblacion'];
 $provincia = $_POST['provincia'];
 $nif = $_POST['nif'];
-$telefono = $_POST['telefono'];
+$telefono = intval($_POST['telefono']);
 
 // Crear la consulta SQL preparada
 $sql = "UPDATE usuarios 
@@ -36,13 +36,13 @@ $sql = "UPDATE usuarios
             Usuario_poblacion = ?, 
             Usuario_provincia = ?, 
             Usuario_nif = ?, 
-            Usuario_telefono = ? 
+            Usuario_numero_telefono = ? 
         WHERE Usuario_email = ?";
 
 $stmt = $conn->prepare($sql);
 
 // Vincular los parámetros a la consulta
-$stmt->bind_param("ssssssssis", $nombre, $primerApellido, $segundoApellido, $nick, $domicilio, $poblacion, $provincia, $nif, $telefono, $correo);
+$stmt->bind_param("ssssssssis", $nombre, $primerApellido, $segundoApellido, $nick, $domicilio, $poblacion, $provincia, $nif,$telefono, $correo);
 
 // Ejecutar la consulta
 if($stmt->execute()) {
