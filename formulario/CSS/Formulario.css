@@ -268,6 +268,98 @@ header {
     background-color: #7a7a9a;
 }
 
+/* Estilo de la tabla */
+.admin-table {
+    width: 100%;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+.admin-table thead th {
+    background-color: #9191bd;
+    color: #fff;
+    padding: 10px 15px;
+    border: 1px solid #7a7a9a;
+    text-align: left;
+}
+
+.admin-table tbody td {
+    padding: 10px 15px;
+    border: 1px solid #ddd; 
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Estilo general para la tabla de administrador */
+.admin-table {
+    width: 90%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #f8f8f8;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.admin-table thead {
+    background-color: #9191bd;
+}
+
+.admin-table thead th {
+    padding: 10px 15px;
+    color: #fff;
+    border-bottom: 2px solid #7a7a9a;
+    font-weight: bold;
+}
+
+.admin-table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #e6e6e6;
+}
+
+.admin-table tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; 
+    color: #555;
+}
+
+/* Estilo de los enlaces de acción (Modificar y Eliminar) */
+.admin-actions a {
+    margin-right: 10px;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.admin-actions a:last-child {
+    margin-right: 0;
+}
+
+.admin-actions .edit {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.admin-actions .delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.admin-actions .edit:hover {
+    background-color: #e6a00f;
+}
+
+.admin-actions .delete:hover {
+    background-color: #c82333;
+}
+
 
 /*RESPONSIVE FORM*/
 

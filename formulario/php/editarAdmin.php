@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['correo_usuario'])){
+if (!isset($_SESSION['correo_usuario'])) {
     header("Location:../FormularioRegistro.html");
     exit();
 }
@@ -50,7 +50,7 @@ $conn->close();
             <a href="logout.php">
                 <button class="cerrar-sesion">Cerrar sesión</button>
             </a>
-            <a href="logeo.php">
+            <a href="paginaAdmin.php">
                 <button class="volver">volver</button>
             </a>
         </div>
@@ -59,7 +59,9 @@ $conn->close();
     <div class="editar-perfil-formulario">
         <h2>Editar perfil</h2>
         <form method="post" action="./actualizar.php" enctype="multipart/form-data">
-            
+
+            /* readonly disabled: para mostar algun campo y hacerlo no editable */
+
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>">
 
@@ -91,4 +93,5 @@ $conn->close();
         </form>
     </div>
 </body>
+
 </html>

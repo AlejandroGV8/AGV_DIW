@@ -46,7 +46,12 @@ $stmt->bind_param("ssssssssis", $nombre, $primerApellido, $segundoApellido, $nic
 
 // Ejecutar la consulta
 if($stmt->execute()) {
-    header('Location:logeo.php');
+    if($correo == 'admin@gmail.com'){
+        header('location:paginaAdmin.php');
+    } else {
+        header('Location:logeo.php');
+    }
+    
 } else {
     die("Error al preparar la consulta: " . $conn->error);
 }

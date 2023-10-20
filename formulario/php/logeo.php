@@ -41,12 +41,6 @@ $conn->close();
             Bienvenido/a <?php echo $_SESSION['correo_usuario']; ?>
         </div>
         <div class="acciones">
-            <?php
-            // Mostramos la foto de perfil si existe
-            if ($fotoPerfil && file_exists($fotoPerfil)) {
-                echo '<img class="profile-image" src="' . $fotoPerfil . '" alt="Foto de perfil">';
-            }
-            ?>
             <a href="editarPerfil.php">
             <button class="editar">Editar perfil</button>
             </a>
