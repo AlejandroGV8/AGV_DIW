@@ -31,7 +31,7 @@ $stmt->bind_param("i", $id);  // "i" significa que es un entero
 // Ejecuta la sentencia
 if ($stmt->execute()) {
     // Redirige de nuevo a la página de edición de usuarios con un mensaje de éxito
-    header("Location:editarUsuario.php");
+    header("Location:editarUsuarios.php");
 } else {
     die("Error al eliminar el usuario: " . $stmt->error);
 }
