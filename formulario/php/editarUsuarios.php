@@ -94,7 +94,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
                     <td><?= $user['Usuario_numero_telefono'] ?></td>
                     <td><?= $user['Usuario_fecha_contratacion'] ?></td>
                     <td>
-                        <a class="admin-actions" href="editarPerfil.php?id=<?= $user['Usuario_id'] ?>">Modificar</a> |
+                        <a class="admin-actions" href="editarPerfilesDesdeAdmin.php?id=<?= $user['Usuario_id'] ?>">Modificar</a> |
                         <a class="admin-actions" href="eliminar.php?id=<?= $user['Usuario_id'] ?>" onclick="return confirm('¿Estás seguro de que quieres eliminar a este usuario?');">Eliminar</a>
                     </td>
                 </tr>
